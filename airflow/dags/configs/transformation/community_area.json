@@ -1,0 +1,10 @@
+{
+  "drop_columns": [
+    "area_num_1"
+  ],
+  "rename_columns": {
+    "area_numbe": "area_num"
+  },
+  "drop_duplicates": true
+}
+

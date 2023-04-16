@@ -1,0 +1,6 @@
+{
+  "drop_columns": [
+    "the_geom"
+  ],
+  "drop_duplicates": true
+}

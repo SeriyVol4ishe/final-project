@@ -1,0 +1,9 @@
+{
+  "drop_columns": ["the_geom"],
+  "drop_duplicates": false,
+  "dtypes": {
+    "ward": "int64",
+    "shape_leng": "float32",
+    "shape_area": "float32"
+  }
+}

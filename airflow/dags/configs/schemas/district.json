@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "the_geom",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "dist_label",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "dist_num",
+    "type": "INTEGER"
+  }
+]

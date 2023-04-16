@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "the_geom",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ward",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "shape_leng",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "shape_area",
+    "type": "FLOAT"
+  }
+]

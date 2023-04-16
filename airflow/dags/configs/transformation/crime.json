@@ -1,0 +1,29 @@
+{
+  "drop_columns": [
+    "location",
+    "x_coordinate",
+    "y_coordinate"
+  ],
+  "drop_duplicates": false,
+  "dtypes": {
+    "id": "int64",
+    "case_number": "str",
+    "date": "datetime64[ns]",
+    "block": "str",
+    "iucr": "str",
+    "primary_type": "str",
+    "description": "str",
+    "location_description": "str",
+    "arrest": "bool",
+    "domestic": "bool",
+    "beat": "int64",
+    "district": "int64",
+    "ward": "float32",
+    "community_area": "int64",
+    "fbi_code": "str",
+    "year": "int64",
+    "updated_on": "datetime64[ns]",
+    "latitude": "float32",
+    "longitude": "float32"
+  }
+}

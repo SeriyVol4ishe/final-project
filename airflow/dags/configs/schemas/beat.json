@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "the_geom",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "district",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "sector",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "beat",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "beat_num",
+    "type": "INTEGER"
+  }
+]
