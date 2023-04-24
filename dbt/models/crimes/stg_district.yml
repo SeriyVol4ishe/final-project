@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: district
+    description: Current police district boundaries in Chicago. 
+    columns:
+      - name: id
+        description: Unique identifier for the record.
+        tests:
+          - unique
+          - not_null
+      - name: district_label
+        description: District label.
+      - name: district_number
+        description: District number.
