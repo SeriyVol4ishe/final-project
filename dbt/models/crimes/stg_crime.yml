@@ -1,9 +1,7 @@
-
 version: 2
-
 models:
   - name: crime
-    description: ""
+    description: This dataset reflects reported incidents of crime (with the exception of murders where data exists for each victim) that occurred in the City of Chicago from 2001 to present, minus the most recent seven days.
     columns:
       - name: id
         description: Unique identifier for the record.

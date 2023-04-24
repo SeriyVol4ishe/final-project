@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: beat
+    description: Current police beat boundaries in Chicago.
+    columns:
+      - name: id
+        description: Unique identifier for the record.
+        tests:
+          - unique
+          - not_null
+      - name: beat
+        description: ""
+      - name: beat_num
+        description: Beat number (4 digits) (see `beat` field in `crime` model).
+      - name: district
+        description: District number (see `dist_num` field in `district` model).
+      - name: sector
+        description: ""

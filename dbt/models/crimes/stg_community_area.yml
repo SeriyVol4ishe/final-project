@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: community_area
+    description: Current community area boundaries in Chicago.
+    columns:
+      - name: id
+        description: Unique identifier for the record.
+        tests:
+          - unique
+          - not_null
+      - name: area_num
+        description: Community area number.
+      - name: community_name
+        description: Community area name.
