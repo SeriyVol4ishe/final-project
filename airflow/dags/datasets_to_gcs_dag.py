@@ -4,7 +4,9 @@ from pathlib import Path
 
 import pandas as pd
 from airflow.decorators import task, dag
+from airflow.operators.empty import EmptyOperator
 from airflow.providers.google.cloud.hooks.gcs import GCSHook
+from airflow.utils.task_group import TaskGroup
 from sodapy import Socrata
 
 from utils.etl import get_data_transformation_config
@@ -30,7 +32,6 @@ download_config = VariablesGetter(
 
 @task(retries=0, retry_delay=timedelta(seconds=15))
 def download_dataset(dataset_name: str):
-    return dataset_name
     dataset_identifier = variables['datasets'][dataset_name]['dataset_identifier']
     client = Socrata(
         domain=variables['dataset_domain'],
@@ -50,13 +51,10 @@ def download_dataset(dataset_name: str):
         if filepath.exists():
             continue
         partial_df.to_csv(filepath, index=False)
-    return dataset_name
 
 
 @task
 def transform_data(dataset_name: str):
-    # if dataset_name != 'crime':
-    #     return dataset_name
     config = get_data_transformation_config(dataset_name=dataset_name)
     output_csv_dir = Path(f'/tmp/csv/{dataset_name}/')
     output_parquet_dir = Path(f'/tmp/parquet/{dataset_name}/')
@@ -78,7 +76,6 @@ def transform_data(dataset_name: str):
         output_parquet = output_parquet_dir / filepath.name.replace('csv', 'parquet')
         output_parquet.parent.mkdir(parents=True, exist_ok=True)
         df.to_parquet(output_parquet, index=False)
-    return dataset_name
 
 
 @task
@@ -98,20 +95,39 @@ def upload_data_to_gcs(dataset_name):
 @dag(
     dag_id='datasets_to_gcs_dag',
     start_date=datetime(2023, 4, 13),
-    schedule_interval="0 9 * * *",
+    schedule_interval=None,
     catchup=False,
     default_args={
         'owner': 'serg.d',
     }
 )
 def additional_datasets_to_gcs_dag():
-    upload_data_to_gcs.expand(
-        dataset_name=transform_data.expand(
-            dataset_name=download_dataset.expand(
+    start = EmptyOperator(task_id="start")
+    end = EmptyOperator(task_id="end")
+    datasets_list = [
+        'crime',
+        'community_area',
+        'beat',
+        'district',
+        'iucr',
+        'ward',
+    ]
+    tasks = []
+    for dataset in datasets_list:
+        with TaskGroup(group_id=f'{dataset}_group') as tg:
+            download_dataset_task = download_dataset.expand(
                 dataset_name=list(variables['datasets'].keys())
             )
-        )
-    )
+            transform_data_task = transform_data.expand(
+                dataset_name=list(variables['datasets'].keys())
+            )
+            upload_data_to_gcs_task = upload_data_to_gcs.expand(
+                dataset_name=list(variables['datasets'].keys())
+            )
+            download_dataset_task >> transform_data_task >> upload_data_to_gcs_task
+        tasks.append(tg)
+
+    start >> tasks >> end
 
 
 additional_datasets_to_gcs_dag()
