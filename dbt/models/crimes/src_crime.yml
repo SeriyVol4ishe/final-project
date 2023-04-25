@@ -1,5 +1,4 @@
 version: 2
-
 sources:
   - name: staging
     schema: crime_final_dataset

@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: agg_crimes_by_area_by_year
+    description: Crimes count aggregated by community area and year
+    columns:
+      - name: year
+        description: Year.
+      - name: community_name
+        description: Community area name.
+      - name: crimes_count
+        description: Crimes count.

@@ -36,3 +36,11 @@ models:
     # Applies to all files under models/crimes/
     crimes:
       materialized: view
+      +persist_docs:
+        relation: true
+        columns: true
+    aggregated:
+      materialized: view
+      +persist_docs:
+        relation: true
+        columns: true
