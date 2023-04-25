@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: beat
+  - name: stg_beat
     description: Current police beat boundaries in Chicago.
     columns:
       - name: id

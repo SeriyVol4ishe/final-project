@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: district
+  - name: stg_district
     description: Current police district boundaries in Chicago. 
     columns:
       - name: id
