@@ -77,8 +77,8 @@ def gcs_to_bigquery_dag():
                 cluster_fields=[
                     'year',
                     'community_area',
+                    'location',
                     'iucr',
-                    'location_description',
                 ] if dataset_name == 'crime' else None,
                 time_partitioning={
                     'field': 'date',

@@ -2,8 +2,13 @@
   "drop_columns": [
     "location",
     "x_coordinate",
-    "y_coordinate"
+    "y_coordinate",
+    "primary_type",
+    "description"
   ],
+  "rename_columns": {
+    "location_description": "location"
+  },
   "drop_duplicates": false,
   "dtypes": {
     "id": "int64",
@@ -11,9 +16,7 @@
     "date": "datetime64[ns]",
     "block": "str",
     "iucr": "str",
-    "primary_type": "str",
-    "description": "str",
-    "location_description": "str",
+    "location": "str",
     "arrest": "bool",
     "domestic": "bool",
     "beat": "int64",
