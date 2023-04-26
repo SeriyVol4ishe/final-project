@@ -10,7 +10,7 @@ from airflow.utils.task_group import TaskGroup
 from sodapy import Socrata
 
 from utils.etl import get_data_transformation_config
-from utils.tasks import download_dataset_by_chunks
+from utils.tasks import download_dataset_by_chunks, get_dataset_length
 from utils.variables import VariablesGetter
 
 variables = VariablesGetter(
@@ -32,7 +32,8 @@ download_config = VariablesGetter(
 
 @task(retries=0, retry_delay=timedelta(seconds=15))
 def download_dataset(dataset_name: str):
-    dataset_identifier = variables['datasets'][dataset_name]['dataset_identifier']
+    dataset_config = variables['datasets'][dataset_name]
+    dataset_identifier = dataset_config['dataset_identifier']
     client = Socrata(
         domain=variables['dataset_domain'],
         app_token=variables['app_token'],
@@ -42,9 +43,9 @@ def download_dataset(dataset_name: str):
         client=client,
         dataset_name=dataset_name,
         dataset_identifier=dataset_identifier,
-        query_order=download_config['datasets'][dataset_name].get('query_order'),
-        query_offset=download_config['datasets'][dataset_name].get('query_offset') or 0,
-        query_limit=download_config['datasets'][dataset_name].get('query_limit'),
+        query_order=dataset_config.get('query_order'),
+        query_offset=dataset_config.get('query_offset'),
+        query_limit=dataset_config.get('query_limit'),
     ):
         filepath = Path(f'/tmp/csv/{dataset_name}/{chunk_number}.csv')
         filepath.parent.mkdir(parents=True, exist_ok=True)
@@ -115,14 +116,14 @@ def additional_datasets_to_gcs_dag():
     tasks = []
     for dataset in datasets_list:
         with TaskGroup(group_id=f'{dataset}_group') as tg:
-            download_dataset_task = download_dataset.expand(
-                dataset_name=list(variables['datasets'].keys())
+            download_dataset_task = download_dataset(
+                dataset_name=dataset,
             )
-            transform_data_task = transform_data.expand(
-                dataset_name=list(variables['datasets'].keys())
+            transform_data_task = transform_data(
+                dataset_name=dataset,
             )
-            upload_data_to_gcs_task = upload_data_to_gcs.expand(
-                dataset_name=list(variables['datasets'].keys())
+            upload_data_to_gcs_task = upload_data_to_gcs(
+                dataset_name=dataset,
             )
             download_dataset_task >> transform_data_task >> upload_data_to_gcs_task
         tasks.append(tg)

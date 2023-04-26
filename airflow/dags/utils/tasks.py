@@ -53,9 +53,11 @@ def download_dataset_by_chunks(
     dataset_identifier: str,
     query_filter: str = None,
     query_order: str = None,
-    query_offset: int = 0,
-    query_limit: int = 100000,
+    query_offset: int = None,
+    query_limit: int = None,
 ):
+    query_offset = query_offset or 0
+    query_limit = query_limit or 100000
     total_rows = get_dataset_length(
         client=client,
         dataset_identifier=dataset_identifier,

@@ -1,0 +1,33 @@
+{
+  "gcp_conn_id": "google_cloud_conn",
+  "datasets": {
+    "crime": {
+      "dataset_identifier": "ijzp-q8t2",
+      "query_offset": 5400000,
+      "query_order": "id"
+    },
+    "beat": {
+      "dataset_identifier": "n9it-hstw",
+      "query_order": "beat_num"
+    },
+    "community_area": {
+      "dataset_identifier": "igwz-8jzy",
+      "query_order": "area_numbe"
+    },
+    "district": {
+      "dataset_identifier": "24zt-jpfn",
+      "query_order": "dist_num"
+    },
+    "iucr": {
+      "dataset_identifier": "c7ck-438e",
+      "query_order": "iucr"
+    },
+    "ward": {
+      "dataset_identifier": "k9yb-bpqx",
+      "query_order": "ward"
+    }
+  },
+  "dataset_domain": "data.cityofchicago.org",
+  "destination_bucket": "crime_data_0f9897bdc74c821d",
+  "app_token": "Fzls3kyM518iBEH3Z9vzln7bo"
+}

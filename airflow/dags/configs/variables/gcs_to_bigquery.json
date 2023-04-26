@@ -1,0 +1,5 @@
+{
+  "gcp_conn_id": "google_cloud_conn",
+  "source_bucket": "crime_data_0f9897bdc74c821d",
+  "dataset_id": "dataset"
+}
