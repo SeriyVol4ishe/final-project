@@ -14,6 +14,7 @@
    ![img.png](../poc/dbt/dbt_build.png)
 4. Run `dbt run`
    ![img.png](../poc/dbt/dbt_run.png)
+   ![img.png](../poc/gcp/bigquery_dbt_models.png)
 5. To generate docs and see it in browser run `dbt docs generate`
    and then `dbt docs serve --port <port>` and open link `localhost:<port>`
    ![img.png](../poc/dbt/dbt_docs_generate.png)
