@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: agg_crimes_by_iucr_by_month
+    description: Crimes count aggregated by multiple criteria (iucr, community_area and month)
+    columns:
+      - name: year
+        description: Year.
+      - name: community_name
+        description: Community name in which the crime occurred.
+      - name: month
+        description: Month value of the stg_crime.date field.
+      - name: iucr
+        description: Four digit codes (`string` format).
+      - name: is_active
+        description: Whether the code is active. Retired codes (false) are present in this dataset for historical reference. There is a filtered view for this dataset showing only active codes.
+      - name: primary_description
+        description: Crime type.
+      - name: secondary_description
+        description: Crime type subcategory (abstract description).
+      - name: crimes_count
+        description: Crimes count.

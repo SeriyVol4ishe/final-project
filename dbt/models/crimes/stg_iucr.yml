@@ -13,6 +13,6 @@ models:
       - name: primary_description
         description: Crime type.
       - name: secondary_description
-        description: Crime type subcategory (abstract description). 
-      - name: active
+        description: Crime type subcategory (abstract description).
+      - name: is_active
         description: Whether the code is active. Retired codes (false) are present in this dataset for historical reference. There is a filtered view for this dataset showing only active codes.
