@@ -7,4 +7,3 @@ resource "google_storage_bucket" "crime_data_bucket" {
   storage_class               = "STANDARD"
   uniform_bucket_level_access = true
 }
-# terraform import google_storage_bucket.chicago_crime_raw_data chicago-crime-raw-data

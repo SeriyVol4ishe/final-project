@@ -1,4 +1,4 @@
-resource "google_bigquery_dataset" "dataset" {
+resource "google_bigquery_dataset" "dataset_analytics" {
   access {
     role          = "OWNER"
     special_group = "projectOwners"
@@ -14,7 +14,7 @@ resource "google_bigquery_dataset" "dataset" {
     special_group = "projectWriters"
   }
 
-  dataset_id                 = "dataset"
+  dataset_id                 = "dataset_analytics"
   delete_contents_on_destroy = false
   location                   = var.region
   project                    = var.project

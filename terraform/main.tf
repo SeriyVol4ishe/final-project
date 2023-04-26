@@ -3,7 +3,7 @@ terraform {
   backend "local" {}
   required_providers {
     google = {
-      source  = "hashicorp/google"
+      source = "hashicorp/google"
     }
     random = {
       source = "hashicorp/random"
@@ -12,8 +12,8 @@ terraform {
 }
 
 provider "google" {
-  project = var.project
-  region = var.region
+  project     = var.project
+  region      = var.region
   credentials = file(var.credentials)
 }
 
