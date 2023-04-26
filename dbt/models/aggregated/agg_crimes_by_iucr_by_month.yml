@@ -10,12 +10,12 @@ models:
       - name: month
         description: Month value of the stg_crime.date field.
       - name: iucr
-        description: Four digit codes (`string` format).
+        description: The Illinois Uniform Crime Reporting. This is directly linked to the Primary Type and Description. See the list of IUCR codes at https://data.cityofchicago.org/d/c7ck-438e
       - name: is_active
         description: Whether the code is active. Retired codes (false) are present in this dataset for historical reference. There is a filtered view for this dataset showing only active codes.
-      - name: primary_description
-        description: Crime type.
-      - name: secondary_description
+      - name: primary_type
+        description: Crime primary type.
+      - name: description
         description: Crime type subcategory (abstract description).
       - name: crimes_count
         description: Crimes count.

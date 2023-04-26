@@ -4,8 +4,6 @@ select
     date,
     block,
     iucr,
-    primary_type,
-    description,
     location_description,
     arrest,
     domestic,

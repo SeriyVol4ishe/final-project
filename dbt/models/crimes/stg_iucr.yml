@@ -9,10 +9,10 @@ models:
           - unique
           - not_null
       - name: iucr
-        description: Four digit codes (`string` format).
-      - name: primary_description
-        description: Crime type.
-      - name: secondary_description
+        description: The Illinois Uniform Crime Reporting. This is directly linked to the Primary Type and Description. See the list of IUCR codes at https://data.cityofchicago.org/d/c7ck-438e
+      - name: primary_type
+        description: Crime primary type.
+      - name: description
         description: Crime type subcategory (abstract description).
       - name: is_active
         description: Whether the code is active. Retired codes (false) are present in this dataset for historical reference. There is a filtered view for this dataset showing only active codes.

@@ -4,8 +4,8 @@ select
     extract(month from cr.date) as month,
     cr.iucr,
     iucr.is_active,
-    iucr.primary_description,
-    iucr.secondary_description,
+    iucr.primary_type,
+    iucr.description,
     count(cr.id) as crimes_count
 from {{ ref('stg_crime') }} as cr
 left join {{ ref('stg_iucr') }} as iucr
@@ -19,6 +19,6 @@ group by
     month,
     iucr,
     is_active,
-    primary_description,
-    secondary_description
+    primary_type,
+    description
 order by crimes_count desc
