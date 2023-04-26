@@ -15,6 +15,7 @@ variables = VariablesGetter(
     keys=[
         'gcp_conn_id',
         'source_bucket',
+        'dataset_id',
     ]
 )
 
@@ -41,7 +42,7 @@ def gcs_to_bigquery_dag():
 
     create_dataset_task = BigQueryCreateEmptyDatasetOperator(
         task_id='create_dataset_task',
-        dataset_id='crime_final_dataset',
+        dataset_id=variables['dataset_id'],
         gcp_conn_id=variables['gcp_conn_id']
     )
 
@@ -71,8 +72,18 @@ def gcs_to_bigquery_dag():
                 source_objects=get_parquet_files_links_task.output,
                 autodetect=True,
                 write_disposition="WRITE_TRUNCATE",
-                destination_project_dataset_table=f'crime_final_dataset.{dataset_name}',
+                destination_project_dataset_table=f'{variables["dataset_id"]}.{dataset_name}',
                 source_format=filetype.upper(),
+                cluster_fields=[
+                    'year',
+                    'community_area',
+                    'iucr',
+                    'location_description',
+                ] if dataset_name == 'crime' else None,
+                time_partitioning={
+                    'field': 'date',
+                    'type': 'YEAR',
+                } if dataset_name == 'crime' else None
             )
             get_parquet_files_links_task >> gcs_to_bq_operator
         tasks.append(tg)
