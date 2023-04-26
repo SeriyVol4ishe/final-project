@@ -5,11 +5,6 @@ import pandas as pd
 from google.cloud.storage import Bucket
 
 
-def get_dataset_schema(dataset_name: str):
-    with open(f'dags/configs/schemas/{dataset_name}.json', 'r') as file:
-        return json.loads(file.read())
-
-
 def get_data_transformation_config(dataset_name: str):
     with open(f'dags/configs/transformation/{dataset_name}.json', 'r') as file:
         return json.loads(file.read())
