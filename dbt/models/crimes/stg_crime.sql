@@ -4,7 +4,7 @@ select
     date,
     block,
     iucr,
-    location_description,
+    location,
     arrest,
     domestic,
     beat,

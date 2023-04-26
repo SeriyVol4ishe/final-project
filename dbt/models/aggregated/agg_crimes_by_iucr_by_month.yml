@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: agg_crimes_by_iucr_by_month
-    description: Crimes count aggregated by multiple criteria (iucr, community_area and month)
+    description: Crimes count aggregated by multiple criteria (iucr, location, community_area and month)
     columns:
       - name: year
         description: Year.
