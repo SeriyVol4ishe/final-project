@@ -1,10 +1,15 @@
-Welcome to your new dbt project!
+# DBT
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+## Prerequisites
+1. Install dbt:
+`pip install dbt-bigquery`
+## Use
+1. Change project value and path to your credentials json in `profiles.yml`
+2. Run `cd dbt`
+3. Run `dbt build`
+4. Run `dbt run`
+5. To generate docs and see it in browser run `dbt docs generate`
+and then `dbt docs serve --port <port>` and open link `localhost:<port>`
 
 
 ### Resources:
