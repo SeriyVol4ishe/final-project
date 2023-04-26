@@ -8,3 +8,6 @@ group by
     year,
     month,
     primary_type
+order by
+    year,
+    month

@@ -83,10 +83,10 @@ go to [link](https://data.cityofchicago.org/d/aerh-rz74)
 - Each dataset has Socrata API documentation that can be accessed by link:
     - [crime](https://dev.socrata.com/foundry/data.cityofchicago.org/ijzp-q8t2)
     - [iucr](https://dev.socrata.com/foundry/data.cityofchicago.org/c7ck-438e)
-    - [community_area](https://dev.socrata.com/foundry/data.cityofchicago.org/cauq-8yn6)
-    - [ward](https://dev.socrata.com/foundry/data.cityofchicago.org/sp34-6z76)
-    - [district](https://dev.socrata.com/foundry/data.cityofchicago.org/fthy-xz3r)
-    - [beat](https://dev.socrata.com/foundry/data.cityofchicago.org/aerh-rz74)
+    - [community_area](https://dev.socrata.com/foundry/data.cityofchicago.org/igwz-8jzy)
+    - [ward](https://dev.socrata.com/foundry/data.cityofchicago.org/k9yb-bpqx)
+    - [district](https://dev.socrata.com/foundry/data.cityofchicago.org/24zt-jpfn)
+    - [beat](https://dev.socrata.com/foundry/data.cityofchicago.org/n9it-hstw)
 
 ### Project structure
 
