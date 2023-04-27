@@ -43,7 +43,7 @@ Three DAGs are presented in this project:
 
 1. Run in terminal in project root directory:
 
-`./create_airflow_env_file && docker-compose -f airflow/docker-compose.yaml up --build`
+`./create_airflow_env_file.sh && docker-compose -f airflow/docker-compose.yaml up --build`
 
 2. Open browser and go to `localhost:8080` and use `airflow` as username and password:
 
