@@ -1,11 +1,16 @@
-# DBT
+# DBT Docs
+## Content:
+- [Prerequisites](#prerequisites)
+- [Local setup and run](#local-setup-and-run)
+- [Setup in DBT Cloud](#setup-in-dbt-cloud)
+- [Resources](#resources)
 
-## Prerequisites
+## Prerequisites:
 
 1. Install dbt:
    `pip install dbt-bigquery`
 
-## Local setup and run
+## Local setup and run:
 
 1. Change project value and path to your credentials json in `profiles.yml`
 2. Run `cd dbt`:
@@ -28,7 +33,7 @@
    ![img.png](../poc/dbt/dbt_docs_serve.png)
    ![img.png](../poc/dbt/dbt_docs_browser.png)
 
-## Setup in DBT Cloud
+## Setup in DBT Cloud:
 
 1. Create account in [getdbt.com](https://www.getdbt.com/) or login if you have one.
 2. After login create a new account:
