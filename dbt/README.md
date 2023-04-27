@@ -5,18 +5,25 @@
 1. Install dbt:
    `pip install dbt-bigquery`
 
-## Local setup and run 
+## Local setup and run
 
 1. Change project value and path to your credentials json in `profiles.yml`
-2. Run `cd dbt`
+2. Run `cd dbt`:
+
    ![img.png](../poc/dbt/cd_dbt.png)
-3. Run `dbt build`
+
+3. Run `dbt build`:
+
    ![img.png](../poc/dbt/dbt_build.png)
-4. Run `dbt run`
+
+4. Run `dbt run`:
+
    ![img.png](../poc/dbt/dbt_run.png)
    ![img.png](../poc/gcp/bigquery_dbt_models.png)
+
 5. To generate docs and see it in browser run `dbt docs generate`
-   and then `dbt docs serve --port <port>` and open link `localhost:<port>`
+   and then `dbt docs serve --port <port>` and open link `localhost:<port>`:
+
    ![img.png](../poc/dbt/dbt_docs_generate.png)
    ![img.png](../poc/dbt/dbt_docs_serve.png)
    ![img.png](../poc/dbt/dbt_docs_browser.png)
@@ -25,33 +32,48 @@
 
 1. Create account in [getdbt.com](https://www.getdbt.com/) or login if you have one.
 2. After login create a new account:
+
 ![img.png](../poc/dbt/cloud_create_account.png)
+
 3. Choose a BigQuery connection:
+
 ![img.png](../poc/dbt/cloud_choose_connection.png)
+
 4. Configure environment by uploading Service Account JSON file:
+
 ![img.png](../poc/dbt/cloud_json_file.png)
+
 5. Choose dataset for models build and test connection:
+
 ![img.png](../poc/dbt/cloud_choose_dataset.png)
 ![img.png](../poc/dbt/cloud_test_connection.png)
+
 6. Choose your repository on `Setup a Repository` step in dbt cloud:
+
 ![img.png](../poc/dbt/cloud_setup_repository.png)
+
 7. Project is ready:
+
 ![img.png](../poc/dbt/cloud_enjoy.png)
+
 8. Due to existence of dbt project inside a subdirectory you need to set `Project subdirectory` setting:
- - Go to the `Account Settings`:
-   ![img.png](../poc/dbt/cloud_init_account_settings.png)
- - Tap on your project name:
-   ![img.png](../poc/dbt/cloud_init_choose_project.png)
- - Click `Edit` button and set `Project subdirectory` to `dbt`:
-   ![img.png](../poc/dbt/cloud_init_choose_subdirectory.png)
- - Click on `Save` button:
-   ![img.png](../poc/dbt/cloud_init_subdirectory_saved.png)
+
+- Go to the `Account Settings`:
+  ![img.png](../poc/dbt/cloud_init_account_settings.png)
+- Tap on your project name:
+  ![img.png](../poc/dbt/cloud_init_choose_project.png)
+- Click `Edit` button and set `Project subdirectory` to `dbt`:
+  ![img.png](../poc/dbt/cloud_init_choose_subdirectory.png)
+- Click on `Save` button:
+  ![img.png](../poc/dbt/cloud_init_subdirectory_saved.png)
+
 9. Go to `Develop` section and create new branch:
-![img.png](../poc/dbt/cloud_create_branch.png)
+
+   ![img.png](../poc/dbt/cloud_create_branch.png)
+
 10. Enjoy:
-![img.png](../poc/dbt/cloud_dbt_build.png)
 
-
+    ![img.png](../poc/dbt/cloud_dbt_build.png)
 
 ### Resources:
 
