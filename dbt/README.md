@@ -59,12 +59,19 @@
 8. Due to existence of dbt project inside a subdirectory you need to set `Project subdirectory` setting:
 
 - Go to the `Account Settings`:
+
   ![img.png](../poc/dbt/cloud_init_account_settings.png)
+
 - Tap on your project name:
+
   ![img.png](../poc/dbt/cloud_init_choose_project.png)
+
 - Click `Edit` button and set `Project subdirectory` to `dbt`:
+
   ![img.png](../poc/dbt/cloud_init_choose_subdirectory.png)
+
 - Click on `Save` button:
+
   ![img.png](../poc/dbt/cloud_init_subdirectory_saved.png)
 
 9. Go to `Develop` section and create new branch:
