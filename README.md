@@ -10,6 +10,7 @@ Final project for `Data Engineering Zoomcamp` course from [DataTalksClub](https:
         - [Main dataset](#about-crimes---2001-to-present)
         - [Additional datasets](#about-additional-datasets)
     - [Project structure](#project-structure)
+    - [Project documentation](#project-documentation)
         - [Prerequisites](docs/PREREQUISITES.md)
         - [Terraform project documentation](terraform/README.md)
         - [AirFlow project documentation](airflow/README.md)
@@ -98,6 +99,14 @@ dbt /          contains DBT project for data transformation
 docs /         contains files and images for project documentation
 terraform /    contains Terraform project for initialization of project infrastructure in GCP
 ```
+
+### Project documentation
+
+  - [Prerequisites](docs/PREREQUISITES.md)
+  - [Terraform project documentation](terraform/README.md)
+  - [AirFlow project documentation](airflow/README.md)
+  - [DBT project documentation](dbt/README.md)
+  - [Dashboards documentation](dashboards/README.md)
 
 ### Technology stack
 

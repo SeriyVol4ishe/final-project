@@ -78,7 +78,7 @@ x-airflow-common:
     - ${PWD}/airflow/dags:/opt/airflow/dags
     - ${PWD}/logs:/opt/airflow/logs
     - ${PWD}/airflow/plugins:/opt/airflow/plugins
-    - ${PWD}/keys:/opt/google/credentials
+    - ${PWD}/credentials:/opt/google/credentials
     - ${PWD}/tmp:/tmp
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
@@ -250,6 +250,8 @@ services:
         fi
         mkdir -p /sources/logs /sources/dags /sources/plugins
         chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        gosu airflow airflow variables import /sources/variables_and_connections/variables.json
+        gosu airflow airflow connections import /sources/variables_and_connections/connections.json
         exec /entrypoint airflow version
     # yamllint enable rule:line-length
     environment:
@@ -259,8 +261,6 @@ services:
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
       _PIP_ADDITIONAL_REQUIREMENTS: ''
-    env_file:
-      - ${PWD}/.env
     user: "0:0"
     volumes:
       - ${PWD}/airflow:/sources

@@ -1,0 +1,11 @@
+{
+  "google_cloud_conn": {
+    "conn_type": "google-cloud-platform",
+    "login": null,
+    "password": null,
+    "host": null,
+    "port": null,
+    "schema": null,
+    "extra": "{\"extra__google_cloud_platform__key_path\": \"/opt/google/credentials/credentials.json\"}"
+  }
+}
