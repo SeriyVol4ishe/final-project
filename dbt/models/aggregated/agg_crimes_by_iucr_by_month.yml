@@ -9,6 +9,8 @@ models:
         description: Community name in which the crime occurred.
       - name: month
         description: Month value of the stg_crime.date field.
+      - name: location
+        description: Description of the location where the incident occurred.
       - name: iucr
         description: The Illinois Uniform Crime Reporting. This is directly linked to the Primary Type and Description. See the list of IUCR codes at https://data.cityofchicago.org/d/c7ck-438e
       - name: is_active
