@@ -35,12 +35,12 @@
       }
     },
     "dataset_domain": "data.cityofchicago.org",
-    "destination_bucket": "crime_data_0f9897bdc74c821d",
-    "app_token": "Fzls3kyM518iBEH3Z9vzln7bo"
+    "destination_bucket": "<your-bucket>",
+    "app_token": "<your-app-token>"
   },
   "gcs_to_bigquery": {
     "gcp_conn_id": "google_cloud_conn",
-    "source_bucket": "crime_data_0f9897bdc74c821d",
+    "source_bucket": "<your-bucket>",
     "dataset_id": "dataset"
   }
 }
