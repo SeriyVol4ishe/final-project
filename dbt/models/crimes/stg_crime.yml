@@ -16,6 +16,10 @@ models:
         description: The partially redacted address where the incident occurred, placing it on the same block as the actual address.
       - name: iucr
         description: The Illinois Uniform Crime Reporting code. This is directly linked to the Primary Type and Description. See the list of IUCR codes at https://data.cityofchicago.org/d/c7ck-438e
+      - name: primary_type
+        description: The primary description of the IUCR code.
+      - name: description
+        description: The secondary description of the IUCR code, a subcategory of the primary description.
       - name: location
         description: Description of the location where the incident occurred.
       - name: arrest

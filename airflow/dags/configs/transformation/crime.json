@@ -2,9 +2,7 @@
   "drop_columns": [
     "location",
     "x_coordinate",
-    "y_coordinate",
-    "primary_type",
-    "description"
+    "y_coordinate"
   ],
   "rename_columns": {
     "location_description": "location"
