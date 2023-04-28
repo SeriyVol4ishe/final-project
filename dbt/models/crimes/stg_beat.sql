@@ -4,4 +4,4 @@ select
     beat_num,
     district,
     sector
-from {{ source('staging', 'beat') }}
+from {{ source('staging', 'beat') }} as model
