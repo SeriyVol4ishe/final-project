@@ -38,8 +38,25 @@ Three DAGs are presented in this project:
   ![img.png](../docs/poc/airflow/airflow_gcs_to_bigquery_dag_grid.png)
   ![img.png](../docs/poc/airflow/airflow_gcs_to_bigquery_dag_graph.png)
 
-
 ## Local setup and run
+
+### Prerequisites
+
+> **Warning**
+>
+> All requests should include an app token that identifies your application, and each application
+> should have its own unique app token. A limited number of requests can be made without an app token, but they are
+> subject to much lower throttling limits than request that do include one. With an app token, your application is
+> guaranteed access to it's own pool of requests. If you don't have an app token yet, click the button to the right to
+> sign up for one.
+>
+> Create App Token following the [instructions](/docs/PREREQUISITES.md#app-token-creation).
+
+> **Warning**
+>
+> Before triggering DAGs your should create GCP infrastructure using [`terraform`](/terraform/README.md) and due to
+> randomly generated bucket name set its value in variables manually following
+> this [instructions](/docs/PREREQUISITES.md#set-gcs-bucket-variable).
 
 1. Run in terminal in project root directory:
 
@@ -73,4 +90,5 @@ Three DAGs are presented in this project:
    ![img.png](../docs/poc/airflow/airflow_gcs_to_bigquery_dag_success.png)
 
 ## Troubleshooting
+
     !TODO: add this section
