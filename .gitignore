@@ -1,5 +1,6 @@
 keys
 tmp
+logs
 .idea
 spark
 credentials
