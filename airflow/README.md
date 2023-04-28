@@ -87,7 +87,9 @@ Three DAGs are presented in this project:
 
    ![img.png](../docs/poc/airflow/airflow_crime_pipeline_dag_success_home.png)
    ![img.png](../docs/poc/airflow/airflow_datasets_to_gcs_dag_success.png)
+   ![img.png](../docs/poc/gcp/storage_crime_parquet_files.png)
    ![img.png](../docs/poc/airflow/airflow_gcs_to_bigquery_dag_success.png)
+   ![img.png](../docs/poc/gcp/datasets_in_bigquery.png)
 
 ## Troubleshooting
 
