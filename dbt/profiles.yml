@@ -2,11 +2,11 @@ final_project:
   target: dev
   outputs:
     dev:
-      project: final-project-382415
+      project: [YOUR PROJECT NAME]
       dataset: dataset_analytics
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: ../keys/final-project-382415-972971564a58.json
+      keyfile: ../credentials/credentials.json
       location: us
       method: service-account
       priority: interactive
