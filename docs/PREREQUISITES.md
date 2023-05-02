@@ -6,6 +6,60 @@
 >
 > `terraform`
 
+## Google Cloud Project
+
+1. In the Google Cloud console, go to [Create a Project](https://console.cloud.google.com/projectcreate)
+
+2. In the Project Name field, enter a descriptive name for your project.
+
+   **Optional:** To edit the Project ID, click Edit. The project ID can't be changed after the project is created, so
+   choose an ID that meets your needs for the lifetime of the project.
+
+   ![img.png](../docs/poc/gcp/gcp_project_creation.png)
+
+3. Click Create. The console navigates to the Dashboard page and your project is created within a few minutes.
+
+   ![img.png](../docs/poc/gcp/gcp_project_dashboard.png)
+
+4. After creation a project you have to create service account. Go
+   to [Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) and choose your project:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_page.png)
+
+5. Click on `CREATE SERVICE ACCOUNT`, enter the name and (optional) account ID and description and
+   click `CREATE AND CONTINUE`:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_create_account.png)
+
+6. Grant this service account access to project's `BigQuery` and `GCS` resources and data and click `CONTINUE`:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_grant_access.png)
+
+7. Click `DONE`:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_final_step.png)
+
+8. Click on `Email` value of created account:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_click_email.png)
+
+9. Go to `KEYS` section of the opened page and create new key:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_keys_section.png)
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_click_create_new_key.png)
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_click_create_new_key_json.png)
+
+10. After click on `CREATE` button the private key will be saved on your computer:
+
+   ![img.png](../docs/poc/gcp/gcp_service_accounts_click_create_new_key_json_downloaded.png)
+
+11. Now you have to copy this JSON file to the `credentials` folder of your cloned project and rename this file
+    to `credentials.json`:
+
+   ![img.png](../docs/poc/gcp/gcp_credentials_json.png)
+
 ## App Token Creation
 
 1. Register on [Chicago Data Portal](https://data.cityofchicago.org/signup)

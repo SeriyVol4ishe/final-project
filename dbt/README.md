@@ -1,5 +1,7 @@
 # DBT Docs
+
 ## Content:
+
 - [Prerequisites](#prerequisites)
 - [Local setup and run](#local-setup-and-run)
 - [Setup in DBT Cloud](#setup-in-dbt-cloud)
@@ -7,12 +9,26 @@
 
 ## Prerequisites:
 
-1. Install dbt:
-   `pip install dbt-bigquery`
+> **Warning**
+>
+> You have to put `credentials.json` into `credentials` folder in project directory.
+>
+> Create Project and Service Account following the [instructions](/docs/PREREQUISITES.md#google-cloud-project).
+
+> **Warning**
+>
+> Before start working with `dbt` you have to run Airflow DAGs that download source data and create BigQuery tables
+>
+> Start DAGs with Airflow following the [instructions](/airflow/README.md#local-setup-and-run).
+
+Install dbt: `pip install dbt-bigquery`
 
 ## Local setup and run:
 
-1. Change project value and path to your credentials json in `profiles.yml`
+1. Change project name value in `profiles.yml`:
+
+   ![img.png](../docs/poc/dbt/dbt_change_profiles_yml.png)
+
 2. Run `cd dbt`:
 
    ![img.png](../docs/poc/dbt/cd_dbt.png)

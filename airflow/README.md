@@ -58,6 +58,13 @@ Three DAGs are presented in this project:
 > randomly generated bucket name set its value in variables manually following
 > this [instructions](/docs/PREREQUISITES.md#set-gcs-bucket-variable).
 
+
+> **Warning**
+>
+> You have to put `credentials.json` into `credentials` folder in project directory.
+>
+> Create Project and Service Account following the [instructions](/docs/PREREQUISITES.md#google-cloud-project).
+
 1. Run in terminal in project root directory:
 
 `./create_airflow_env_file.sh && docker-compose -f airflow/docker-compose.yaml up --build`
