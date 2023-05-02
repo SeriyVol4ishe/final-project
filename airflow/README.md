@@ -82,7 +82,8 @@ Three DAGs are presented in this project:
 > } if dataset_name == 'crime' else None
 > ```
 > Clustering and partitioning makes sense only for `crime` table as it has millions of rows. The order of
-> the `clustering_fields` is due to the specifics of the `aggregated` models (see `aggregated` dbt models).
+> the `clustering_fields` is due to the specifics of the `aggregated` models (f.e. see `group by` ordering `aggregated`
+> dbt models).
 
 1. Run in terminal in project root directory:
 
