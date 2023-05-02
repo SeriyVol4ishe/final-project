@@ -17,5 +17,5 @@ resource "google_bigquery_dataset" "dataset" {
   dataset_id                 = "dataset"
   delete_contents_on_destroy = false
   location                   = var.region
-  project                    = var.project
+  project                    = local.credentials_data.project_id
 }
