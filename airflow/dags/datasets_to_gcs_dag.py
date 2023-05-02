@@ -38,7 +38,7 @@ def download_dataset(dataset_name: str):
         domain=variables['dataset_domain'],
         app_token=variables['app_token'],
     )
-    client.timeout = 60
+    # client.timeout = 60
     for chunk_number, partial_df in download_dataset_by_chunks(
         client=client,
         dataset_name=dataset_name,

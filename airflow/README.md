@@ -120,4 +120,25 @@ Three DAGs are presented in this project:
 
 ## Troubleshooting
 
-    !TODO: add this section
+### Error on downloading dataset from source:
+
+Sometimes the error occurs when `download_dataset` task is running:
+![img.png](../docs/poc/airflow/airflow_dataset_to_gcs_error.png)
+
+This can happen for several reasons:
+
+1. Wrong application token
+2. Request limit too high
+
+In such cases, you can reduce the limit, set the correct application token by replacing the appropriate values in
+the "datasets_to_gcs" variable. If the task didn't crash immediately with an error, but after downloading a certain
+amount of data, you can use the logs to see what the last offset value was, set this value in the "datasets_to_gcs"
+variable for the desired dataset, and restart the task, clearing its state.
+
+If you want to change the limit and offset values at the same time, you have to calculate appropriate values by
+yourself. ¯\_(ツ)_/¯
+
+By default, the offset value is 0, and the limit is 100000. Usually, you just need to change the offset value and
+restart the task.
+
+![img.png](../docs/poc/airflow/airflow_dataset_to_gcs_change_offset.png)
