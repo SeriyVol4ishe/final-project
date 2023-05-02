@@ -65,6 +65,25 @@ Three DAGs are presented in this project:
 >
 > Create Project and Service Account following the [instructions](/docs/PREREQUISITES.md#google-cloud-project).
 
+> **Note**
+>
+> Due to `Tables should be partitioned and clustered in a way that makes sense for the upstream queries`
+> You can see cluster and partition field in `gcs_to_bigquery.py`:
+> ```python
+> cluster_fields=[
+>     'year',
+>     'community_area',
+>     'location',
+>     'iucr',
+> ] if dataset_name == 'crime' else None,
+> time_partitioning={
+>     'field': 'date',
+>     'type': 'YEAR',
+> } if dataset_name == 'crime' else None
+> ```
+> Clustering and partitioning makes sense only for `crime` table as it has millions of rows. The order of
+> the `clustering_fields` is due to the specifics of the `aggregated` models (see `aggregated` dbt models).
+
 1. Run in terminal in project root directory:
 
 `./create_airflow_env_file.sh && docker-compose -f airflow/docker-compose.yaml up --build`
