@@ -1,6 +1,6 @@
 # Final project
 
-Final project for `Data Engineering Zoomcamp` course from [DataTalksClub](https://github.com/DataTalksClub)
+Final project for [`Data Engineering Zoomcamp`](https://github.com/DataTalksClub/data-engineering-zoomcamp) course from [`DataTalksClub`](https://github.com/DataTalksClub)
 
 ## Table of contents
 
