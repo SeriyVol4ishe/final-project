@@ -10,3 +10,8 @@
 
 ![img.png](../docs/poc/gcp/dashboard_2.png)
 
+# Example dashboard №3:
+
+[Dashboard 3](https://lookerstudio.google.com/reporting/8b75e748-d91c-4e4a-a851-71092f6ab33d)
+
+![img.png](../docs/poc/gcp/dashboard_3.png)
