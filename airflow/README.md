@@ -13,10 +13,11 @@
 ## Airflow project structure
 
 ```
-dags /                      contains DAGs
-dags / configs /            contains JSON files with some configuration stuff used in DAGs
-docker /                    contains Dockerfile and requirements.txt
-variables_and_connections / contains JSON files with variables and connections to import on airflow-init step
+dags /                                  contains DAGs
+dags / configs / transformation /       contains JSON files with data transform configuration 
+                                          (renaming columns, dtypes for dataframes, etc.) used in DAGs
+docker /                                contains Dockerfile and requirements.txt
+variables_and_connections /             contains JSON files with variables and connections to import on airflow-init step
 ```
 
 ## DAGs structure
