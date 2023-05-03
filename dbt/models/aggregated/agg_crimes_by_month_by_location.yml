@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: agg_crimes_by_month_by_location
+    description: Crimes count aggregated by location.
+    columns:
+      - name: year
+        description: Year.
+      - name: month
+        description: Month value of the stg_crime.date field.
+      - name: location
+        description: Crime location description.
+      - name: crimes_count
+        description: Crimes count.

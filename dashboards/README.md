@@ -1,3 +1,5 @@
+Dashboards uses information from dbt `aggregated` models (see files in `dbt/models/aggregated` folder)
+
 # Example dashboard №1:
 
 [Dashboard 1](https://lookerstudio.google.com/reporting/a71b8ee4-252f-4c75-9bfa-4ce8e7e11ec9)
