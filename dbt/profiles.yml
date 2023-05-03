@@ -2,7 +2,7 @@ final_project:
   target: dev
   outputs:
     dev:
-      project: [YOUR PROJECT ID]
+      project: final-project-382415
       dataset: dataset_analytics
       job_execution_timeout_seconds: 300
       job_retries: 1
